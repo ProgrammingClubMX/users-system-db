@@ -15,4 +15,3 @@ ALTER TABLE "profile"
     ADD CONSTRAINT profile_to_user
         FOREIGN KEY ("userId")
         REFERENCES "user" ("id");
-        
