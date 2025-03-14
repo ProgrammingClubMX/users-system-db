@@ -9,7 +9,7 @@ CREATE TABLE "userToStatus" (
    "userId" UUID NOT NULL,
    "statusId" UUID NOT NULL 
 );
-
+-- relacionar tablas 
 ALTER TABLE "userToStatus"
   ADD CONSTRAINT "userToStatus_to_userStatus"
   FOREIGN KEY ("statusId")
