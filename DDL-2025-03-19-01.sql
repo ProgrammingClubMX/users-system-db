@@ -9,3 +9,15 @@ CREATE TABLE "groupToStatus"( --se crea tabla con el nombre "groupToStatus"
     "groupId" UUID NOT NULL, --se crea la columna "groupId" del tipo UUID con restriccion not null
     "groupStatusId" UUID NOT NULL --se crea columna "groupStatusId" del tipo UUID con restriccion not null
 );
+
+ALTER TABLE "groupToStatus"
+    ADD CONSTRAINT "groupToStatus_to_group"
+    FOREIGN KEY ("groupId")
+    REFERENCES "group"("id");
+
+ALTER TABLE "groupToStatus"
+    ADD CONSTRAINT "groupToStatus_to_groupStatus"
+    FOREIGN KEY ("groupStatusId")
+    REFERENCES "groupStatusId"("id");
+
+
