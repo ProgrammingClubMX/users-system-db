@@ -8,3 +8,13 @@ CREATE TABLE "groupToTags"( --se crea una tabla llamada "groupToTags"
     "groupId" UUID NOT NULL, --se crea columna "groupId" del tipo de dato UUID con restricción NOT NULL
     "groupTagId" UUID NOT NULL --se crea columna "groupTagId" del tipo de dato UUID con restricción NOT NULL
 ); 
+
+ALTER TABLE "groupToTags"
+    ADD CONSTRAINT "groupToTags_to_group"
+    FOREIGN KEY ("groupId")
+    REFERENCES "group"("id");
+
+ALTER TABLE "groupToTags"
+    ADD CONSTRAINT "groupToTags_to_groupTags"
+    FOREIGN KEY ("groupTagId")
+    REFERENCES "groupTags"("id");
